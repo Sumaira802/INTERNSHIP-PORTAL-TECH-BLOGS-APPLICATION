@@ -9,6 +9,11 @@
     width: 100px;
 }
 
+.theme-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
 form {
     display: flex;
     flex-direction: column;

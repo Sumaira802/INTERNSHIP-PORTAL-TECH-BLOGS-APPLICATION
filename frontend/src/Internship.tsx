@@ -38,35 +38,35 @@ practical application.</p>
             </div>
             </Link>
 
-            <Link to="/WebDevelopment" className="box-link">
+            <Link to="/web-development" className="box-link">
             <div className="box2">
                 <div className="icon">💻</div>
                 <div className="text">Web Development</div>
             </div>
             </Link>
 
-            <Link to="/AppDev" className="box-link">
+            <Link to="/app-development" className="box-link">
             <div className="box3">
                 <div className="icon">📱</div>
                 <div className="text">App Development</div>
             </div>
             </Link>
 
-            <Link to="/2d3dArchitecture" className="box-link">
+            <Link to="/architecture" className="box-link">
             <div className="box4">
                 <div className="icon">⚙️</div>
                 <div className="text">2D/3D Architecture</div>
             </div>
             </Link>
 
-            <Link to="/DigitalMarketing" className="box-link">
+            <Link to="/digital-marketing" className="box-link">
             <div className="box5">
                 <div className="icon">📊</div>
                 <div className="text">Digital Marketing</div>
             </div>
             </Link>
 
-            <Link to="/GraphicDesigning" className="box-link">
+            <Link to="/graphics-designing" className="box-link">
             <div className="box6">
                 <div className="icon">🎨</div>
                 <div className="text">Graphics Designing</div>

@@ -8,6 +8,7 @@ import web from './assets/WebGraphics.png'
 import Brand from './assets/BrandIdentity.png'
 import Info from './assets/InfroGraphics.png'
 import SMDesign from './assets/SocialMediaDesign.png'
+import { Link } from 'react-router-dom';
 import './App.css'
 import './AppDev.css'
 
@@ -35,7 +36,9 @@ function AppDev() {
                     <p>⏱️26 Nov, 2024 | 🗂️6 Months | 👨‍💼588 Students</p>
                     <h3>All in one Tech</h3>
                     <p>In this internship, we ensure that students work on industry-ready projects to prepare...</p> <br/>
-                    <a href='#'>Apply Now</a>
+                    <Link to="/InternForm">
+                        <button>Apply Now</button>
+                    </Link>
                 </div>
             </div>
 

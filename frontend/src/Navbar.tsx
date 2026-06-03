@@ -1,53 +1,32 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Internship.css';
+import { Link } from 'react-router-dom';
+import './App'
+interface NavbarProps {
+  isAuthenticated: boolean;
+  setIsAuthenticated: (val: boolean) => void;
+}
 
-function Navbar({ isAuthenticated, setIsAuthenticated }: any) {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    // Logout logic
-    setIsAuthenticated(false);
-    alert("You have been logged out successfully!"); // Logout ka message
-    navigate('/login'); // Logout ke baad login page par bhej dein
-  };
-
+// Function ke andar props ko destructure karein
+function Navbar({ isAuthenticated, setIsAuthenticated }: NavbarProps) {
   return (
     <nav>
       <div className="navbar">
-        <div className="navbar-logo">
-          <video width="120" autoPlay loop muted playsInline>
-            <source src="/Logo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
         
+        <Link to="/" className="logo">Company</Link>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/internship">Internships</Link>
         <Link to="/careers">Careers</Link>
         <Link to="/techBlogs">Tech Blogs</Link>
-
-        {/* Conditional Rendering: Agar login hai to Logout button, warna Signup/Login */}
-        {isAuthenticated ? (
-          <button onClick={handleLogout} style={{ backgroundColor: 'red', color: 'white', padding: '10px' }}>
-            Logout
-          </button>
-        ) : (
-          <>
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
-          </>
-        )}
-
         <Link to="/InternForm">
-          <button style={{ backgroundColor: 'purple', color: 'black', width: '150px', height: '50px', padding: '10px' }}>
+          <button style={{backgroundColor:'purple', color: 'white', width: '150px', height: '50px', padding: '10px'}}>
             Intern Registration
           </button>
         </Link>
+        {/* Logout button add karna zaroori hai taake logout ho sake */}
+        <button onClick={() => setIsAuthenticated(false)}>Logout</button>
       </div>
     </nav>
-  );
+  )
 }
 
 export default Navbar;

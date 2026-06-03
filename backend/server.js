@@ -2,62 +2,74 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
-
 const app = express();
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
-if (!fs.existsSync('./uploads')) fs.mkdirSync('./uploads');
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/ezitech_db')
+    .then(() => console.log("DB Connected Successfully"))
+    .catch(err => console.log(err));
 
-mongoose.connect('mongodb://localhost:27017/ezitech_internships')
-  .then(() => console.log("✅ DB Connected"))
-  .catch(err => console.error("❌ DB Error:", err));
+// Multer Setup (File Upload)
+const upload = multer({ dest: 'uploads/' });
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, 'uploads/'),
-  filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
-});
-const upload = multer({ storage: storage });
+// Schemas
+const User = mongoose.model('User', new mongoose.Schema({ 
+    email: { type: String, required: true }, 
+    password: { type: String, required: true } 
+}));
 
-const ApplicationSchema = new mongoose.Schema({
-  firstName: String, lastName: String, email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  fullName: String, country: String, city: String, phone: String, gender: String,
-  dob: String, joinDate: String, university: String, interviewType: String,
-  duration: String, technology: String, internshipType: String, profileImagePath: String
-});
-const Application = mongoose.model('Application', ApplicationSchema);
+const Intern = mongoose.model('Intern', new mongoose.Schema({ 
+    fullName: String, email: String, password: String, country: String, city: String,
+    phone: String, gender: String, dob: String, joinDate: String, university: String,
+    interviewType: String, duration: String, technology: String, internshipType: String,
+    profileImage: String 
+}));
 
-// Signup Route
+// --- ROUTES ---
+
+// 1. Signup Route
 app.post('/api/signup', async (req, res) => {
-  try {
-    const newUser = new Application(req.body);
-    await newUser.save();
-    res.status(201).json({ message: "Signup Successful!" });
-  } catch (err) { res.status(400).json({ message: "Email already exists!" }); }
+    try {
+        await new User(req.body).save();
+        res.status(200).json({ message: "Signup Successful" });
+    } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-// Login Route
+// 2. Login Route
 app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
-  const user = await Application.findOne({ email });
-  if (user && (user.password === password || user.phone === password || user.dob === password)) {
-    res.status(200).json({ message: "Login Successful!", user });
-  } else {
-    res.status(401).json({ message: "Invalid credentials!" });
-  }
+    const { email, password } = req.body;
+    const user = await User.findOne({ email, password });
+    if (user) res.status(200).json({ message: "Login Successful" });
+    else res.status(401).json({ message: "Invalid Credentials" });
 });
 
-// Intern Form Route
+// 3. Internship Apply Route (with File Upload)
 app.post('/api/apply', upload.single('profileImage'), async (req, res) => {
-  try {
-    const updatedData = { ...req.body, profileImagePath: req.file ? req.file.path : null };
-    await Application.findOneAndUpdate({ email: req.body.email }, updatedData, { upsert: true });
-    res.status(200).json({ message: "Application Saved!" });
-  } catch (err) { res.status(500).json({ message: "Error" }); }
+    try {
+        const newIntern = new Intern({ 
+            ...req.body, 
+            profileImage: req.file ? req.file.path : '' 
+        });
+        await newIntern.save();
+        res.status(200).json({ message: "Application Saved Successfully" });
+    } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
-app.listen(5000, () => console.log('🚀 Server running on port 5000'));
+// 4. GET Routes (Browser mein data dekhne ke liye)
+// Ab browser mein localhost:5000/api/signup likhne par error nahi aayega
+app.get('/api/signup', async (req, res) => {
+    const users = await User.find();
+    res.json(users);
+});
+
+app.get('/api/apply', async (req, res) => {
+    const data = await Intern.find();
+    res.json(data);
+});
+
+app.listen(5000, () => console.log('Server running on port 5000'));

@@ -6,6 +6,7 @@ import BackendDevelopment from './assets/BackendDevelopment.png'
 import Wordpress from './assets/Wordpress.png'
 import PhpLaravel from './assets/PhpLaravel.png'
 import MernStack from './assets/MernStack.png'
+import { Link } from 'react-router-dom';
 import './App.css'
 import './AppDev.css'
 
@@ -33,7 +34,9 @@ function AppDev() {
                     <p>⏱️26 Nov, 2024 | 🗂️6 Months | 👨‍💼588 Students</p>
                     <h3>All in one Tech</h3>
                     <p>In this internship, we ensure that students work on industry-ready projects to prepare...</p> <br/>
-                    <a href='#'>Apply Now</a>
+                    <Link to="/InternForm">
+                        <button>Apply Now</button>
+                    </Link>
                 </div>
             </div>
             

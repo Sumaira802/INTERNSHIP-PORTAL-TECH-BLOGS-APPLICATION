@@ -1,148 +1,20 @@
 .signup-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #111111;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; justify-content: center; align-items: center; min-height: 100vh;
+  background-color: #0f172a;
 }
-
 .signup-card {
-  background-color: #1a1a1a;
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid #333333;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
+  background: #1e293b; padding: 2.5rem; border-radius: 12px;
+  display: flex; flex-direction: column; gap: 15px; width: 320px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
 }
-
-.signup-card h2 {
-  color: #ffffff;
-  margin: 0 0 10px 0;
-  font-size: 28px;
-  font-weight: 600;
+.signup-card h1 { color: #f8fafc; margin-bottom: 10px; }
+.signup-card input {
+  padding: 12px; border-radius: 6px; border: 1px solid #334155;
+  background: #0f172a; color: white;
 }
-
-.signup-card p.subtitle {
-  color: #888888;
-  margin: 0 0 30px 0;
-  font-size: 14px;
+.signup-card button {
+  padding: 12px; background: #3b82f6; color: white; border: none;
+  border-radius: 6px; font-weight: bold; cursor: pointer;
 }
-
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-.form-group label {
-  color: #aaaaaa;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.form-input {
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid #444444;
-  background-color: #222222;
-  color: #ffffff;
-  font-size: 15px;
-  outline: none;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.password-container-box {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-/* "Show/Hide" text ke liye padding barha di taake text ke upar typing na ho */
-.password-container-box .password-field {
-  padding-right: 60px; 
-}
-
-/* Simple purple aesthetic text button styling */
-.text-toggle-btn {
-  position: absolute;
-  right: 14px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  color: #a020f0;
-  outline: none;
-  z-index: 5;
-  padding: 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.text-toggle-btn:hover {
-  color: #bc5eff;
-}
-
-.signup-submit-btn {
-  padding: 14px;
-  background-color: #a020f0;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.2s ease;
-  width: 100%;
-}
-
-.signup-submit-btn:hover {
-  background-color: #8a1bd4;
-}
-
-.status-message {
-  margin-top: 20px;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  text-align: center;
-}
-
-.msg-error {
-  background-color: rgba(255, 0, 0, 0.1);
-  color: #ff4d4d;
-  border: 1px solid rgba(255, 0, 0, 0.2);
-}
-
-.msg-success {
-  background-color: rgba(0, 255, 0, 0.1);
-  color: #4dff4d;
-  border: 1px solid rgba(0, 255, 0, 0.2);
-}
-
-.login-redirect-text {
-  color: #aaa;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 0;
-}
-
-.login-redirect-text a {
-  color: #a020f0;
-  text-decoration: none;
-  font-weight: 600;
-}
+.signup-card p { color: #94a3b8; font-size: 0.9rem; text-align: center; }
+.signup-card a { color: #3b82f6; text-decoration: none; }
