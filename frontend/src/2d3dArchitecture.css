@@ -1,0 +1,57 @@
+.hero {
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-text {
+    text-align: left;
+    margin-right: 20%;
+}
+
+.design {
+    margin-top: 100px;
+}
+
+.bx {
+    background-color: rgb(170, 236, 236);
+    width: 50%;
+    height: 110%;
+    padding: 20px;
+    text-align: left;
+    color: black;
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.bx img {
+    margin-top: 10px;
+    width: 100%;
+    height: 40%;
+    border-radius: 20px;
+}
+
+.b123 {
+    display: flex;
+    flex-direction: col;
+}
+
+.bx a {
+    text-decoration: none;
+    color: blue;
+}
+
+.bx p {
+    font-size: large;
+}
+
+.bx button {
+    width: 90%;
+    border-radius: 0%;
+    background-color: blue;
+    color: white;
+}
+
+.bx:hover {
+    border: 10px solid blue;
+}

@@ -1,0 +1,111 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cards > div {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 220px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(160, 32, 240, 0.2);
+  border-color: #a020f0;
+}
+
+.bx23 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  min-height: auto !important;
+}
+
+.bx2, .bx3 {
+  background-color: #2a2a2a !important;
+  border-radius: 12px;
+  padding: 20px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1;
+  min-height: 120px;
+  border: 1px solid #333333 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.cards button {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #a020f0 !important;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.cards button[title="5 months ago"] {
+  background-color: #444444 !important;
+  margin-right: 8px;
+}
+
+.cards h1 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cards p {
+  font-size: 13px;
+  color: #aaaaaa;
+  margin: 0;
+}
+
+.cards p a {
+  color: #a020f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cards p a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #111111;
+  color: #888888;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top: 1px solid #222222;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 5px 0;
+}

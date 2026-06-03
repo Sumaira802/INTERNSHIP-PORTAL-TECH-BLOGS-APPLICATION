@@ -1,0 +1,110 @@
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.practical {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px;
+  gap: 50px;
+}
+
+.practical .text {
+  flex: 1;
+  text-align: left;
+}
+
+.practical .image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.practical .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.practical .text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}   
+
+.practical .text p {
+  font-size: 18px;
+  color: gray;
+}
+
+.practical .text button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.practical .text button:hover {
+  background-color: #0056b3;
+}
+
+.practical .text button:active {
+  background-color: #003d80;
+}
+
+.practical .text button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.practical .text button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.practical .text button:disabled:hover {
+  background-color: #cccccc;
+}
+
+.practical .text button:disabled:active {
+  background-color: #cccccc;
+}
+
+.practical .text button:disabled:focus {
+  box-shadow: none;
+}
+
+.practical a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.bx12 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.bx34 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.bx1, .bx2, .bx3, .bx4 {
+  border: 0.5px solid white;
+  text-align: left;
+  padding: 20px;
+  margin: 20px;
+  flex: 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
