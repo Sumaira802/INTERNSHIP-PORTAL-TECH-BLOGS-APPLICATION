@@ -75,22 +75,46 @@ input {
   flex-direction: column;
   align-items: center;
   margin: 40px;
+  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 .card {
   display: flex;
   justify-content: space-evenly;
   margin: 50px;
-  gap: 10px;
+  gap: 20px;
   padding: 10px;
+  flex-wrap: wrap;
 }
 
 .DiscoverTech, .Connect, .Grow {
   width: 300px;
   padding: 20px;
-  border: 0.5px solid rgb(84, 78, 78);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #444;
+  border-radius: 12px;
+  background-color: var(--sidebar-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.DiscoverTech:hover, .Connect:hover, .Grow:hover {
+  transform: translateY(-10px);
+}
+
+.step {
+  text-align: left;
+  color: #6a5af9;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.docu a {
+  color: #6a5af9;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .step {

@@ -23,7 +23,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Navbar ko function ke bahar aur Router ke andar rakhein */}
         {isAuthenticated && (
           <Navbar 
             isAuthenticated={isAuthenticated} 
@@ -36,7 +35,7 @@ function App() {
           <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
           {/* Protected Routes */}
-          <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/" element={isAuthenticated ? <Home userName={JSON.parse(localStorage.getItem('user') || '{}').firstName} /> : <Navigate to="/login" />} />
           <Route path="/about" element={isAuthenticated ? <About /> : <Navigate to="/login" />} />
           <Route path="/internship" element={isAuthenticated ? <Internship /> : <Navigate to="/login" />} />          
           <Route path="/careers" element={isAuthenticated ? <Careers /> : <Navigate to="/login" />} />

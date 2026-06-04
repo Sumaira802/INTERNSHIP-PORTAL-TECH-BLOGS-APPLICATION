@@ -38,31 +38,69 @@
   z-index: 2;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  background-color: #121212;
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
 .hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
-}
-.hero-text form input {
-    width: 400px;
-    border-radius: 30px;
-    margin-left: 100px
+  max-width: 600px;
 }
 
 .hero-text form {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.hero-text form input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
 }
 
 .hero-text form button {
-    margin-top: 20px;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  background-color: #6a5af9;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero-text > button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hero-text form button:hover {
+  background-color: #4e44ce;
+  transition: 0.3s;
 }
 
 .DiscoverTech, .Connect, .Grow {

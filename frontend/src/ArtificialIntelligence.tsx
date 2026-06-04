@@ -35,7 +35,6 @@ function AppDev() {
                     <p>⏱️26 Nov, 2024 | 🗂️6 Months | 👨‍💼588 Students</p>
                     <h3>All in one Tech</h3>
                     <p>In this internship, we ensure that students work on industry-ready projects to prepare...</p> <br/>
-                    {/* Purana code: <a href='#'>Apply Now</a> */}
 
                     <Link to="/InternForm">
                       <button>Apply Now</button>
@@ -95,13 +94,11 @@ function AppDev() {
                     <p>Email: info@ezitech.com</p><br/>
                 </div>
                 <div className="links">
-                    <h1>Explore More</h1><br/>
-                    <a href="#">Home</a><br/>
-                    <a href="#">About</a><br/>
-                    <a href="#">Internships</a><br/>
-                    <a href="#">Courses</a><br/>
-                    <a href="#">Careers</a><br/>
-                    <a href="#">Contact</a><br/>
+                    <h1>Quick Links</h1><br/>
+                    <Link to='/Home'><a href="#">Home</a><br/></Link>
+                    <Link to='/About'><a href="#">About</a><br/></Link>
+                    <Link to='/Internships'><a href="#">Internships</a><br/></Link>
+                    <Link to='/Careers'><a href="#">Careers</a><br/></Link>
                 </div>
                 <div className="internship">
                     <h1>Internship</h1><br/>

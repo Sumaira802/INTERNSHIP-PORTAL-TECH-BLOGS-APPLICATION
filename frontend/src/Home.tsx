@@ -12,24 +12,25 @@ import meeting from './assets/meeting.png'
 import JohnDoe from './assets/johndoe.png'
 import JaneSmith from './assets/JaneSmith.png'
 import MichaelJohnson from './assets/MichaelJohnson.png'
+import Internship  from './Internship'
 import { Link } from 'react-router-dom'
 import './Home.css'
 import './App.css'
 
-function Home() {
-
+function Home({ userName }: { userName: string }) {
+    const userData = JSON.parse(localStorage.getItem('user') || '{}');
   return (
     <>
         <header>
             <div className="hero">
             <div className="hero-text">
-                <h1>Welcome to Our Company</h1>
+                <h1>Welcome, {userName || "User"}!</h1>
                 <p>We provide the best services to our customers.</p>
                 <form>
                     <input type="text" placeholder="Search Jobs or Internship"/>
                     <button>Search</button>
                 </form>
-                <button>Learn More</button>
+                <Link to='/Internship'><button>Learn More</button></Link>
             </div>
             </div>
 
@@ -111,7 +112,7 @@ function Home() {
                         </div>
                         <h3>Graphics Design</h3>
                         <p>Your journey to becoming a skilled graphic designer. Wherever your creativity is headed, we provide the inspiration, tools, and support to help you bring your vision to life.</p>
-                        <a href="#" className="explore-link">EXPLORE LANDING →</a>
+                        <a href="#" className="explore-link"><Link to='/GraphicDesigning' className="logo">EXPLORE LANDING →</Link></a>
                     </div>
 
                     <div className="course-card">
@@ -120,8 +121,7 @@ function Home() {
                         </div>
                         <h3>2d/3d Architecture</h3>
                         <p>We're mentors, guides, and partners in your journey to becoming a game developer. Wherever your passion leads, we provide the skills, tools, and support to help you bring your game ideas to life.</p>
-                        <a href="#" className="explore-link">EXPLORE LANDING →</a>
-                    </div>
+                        <a href="#" className="explore-link"><Link to='/2d3dArchitecture' className="logo">EXPLORE LANDING →</Link></a>                    </div>
 
                     <div className="course-card">
                         <div className="card-tag">NEW</div>
@@ -130,7 +130,7 @@ function Home() {
                         </div>
                         <h3>Digital Marketing</h3>
                         <p>We're mentors, guides, and partners in your journey to mastering digital marketing. Wherever your career goals lead, we provide the knowledge, tools, and support to help you drive impactful marketing strategies.</p>
-                        <a href="#" className="explore-link">EXPLORE LANDING →</a>
+                        <a href="#" className="explore-link"><Link to='/ArtificialIntelligence' className="logo">EXPLORE LANDING →</Link></a>
                     </div>
 
                     <div className="course-card">
@@ -139,7 +139,7 @@ function Home() {
                         </div>
                         <h3>Web Development</h3>
                         <p>Master HTML, CSS, JavaScript, and modern frameworks. Build responsive, high-performance websites and dynamic web applications from scratch with expert guidance.</p>
-                        <a href="#" className="explore-link">EXPLORE LANDING →</a>
+                        <a href="#" className="explore-link"><Link to='/WebDevelopment' className="logo">EXPLORE LANDING →</Link></a>
                     </div>
 
                     <div className="course-card">
@@ -148,7 +148,7 @@ function Home() {
                         </div>
                         <h3>App Development</h3>
                         <p>Dive into iOS and Android app creation. Learn to design user-friendly mobile interfaces and develop powerful, native applications using industry-standard tools.</p>
-                        <a href="#" className="explore-link">EXPLORE LANDING →</a>
+                        <a href="#" className="explore-link"><Link to="/AppDev" className="logo">EXPLORE LANDING →</Link></a>
                     </div>
 
                     <div className="course-card">
@@ -234,12 +234,10 @@ function Home() {
                 </div>
                 <div className="links">
                     <h1>Quick Links</h1><br/>
-                    <a href="#">Home</a><br/>
-                    <a href="#">About</a><br/>
-                    <a href="#">Internships</a><br/>
-                    <a href="#">Courses</a><br/>
-                    <a href="#">Careers</a><br/>
-                    <a href="#">Contact</a><br/>
+                    <Link to='/Home'><a href="#">Home</a><br/></Link>
+                    <Link to='/About'><a href="#">About</a><br/></Link>
+                    <Link to='/Internships'><a href="#">Internships</a><br/></Link>
+                    <Link to='/Careers'><a href="#">Careers</a><br/></Link>
                 </div>
                 <div className="internship">
                     <h1>Internship</h1><br/>

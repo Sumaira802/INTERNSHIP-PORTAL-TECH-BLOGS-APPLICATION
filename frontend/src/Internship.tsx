@@ -58,14 +58,12 @@ practical application.</p>
                 <div className="text">2D/3D Architecture</div>
             </div>
             </Link>
-
             <Link to="/digital-marketing" className="box-link">
             <div className="box5">
                 <div className="icon">📊</div>
                 <div className="text">Digital Marketing</div>
             </div>
             </Link>
-
             <Link to="/graphics-designing" className="box-link">
             <div className="box6">
                 <div className="icon">🎨</div>
@@ -177,7 +175,7 @@ practical application.</p>
         <div className="intern">
             <div className="text">
               <h1>Internships for</h1>
-              <p>Customize your internship experience with a range of flexible options and gain real-world skills, seeing your progress in real-time as you learn and grow.</p>
+              <p style={{color: 'white'}}>Customize your internship experience with a range of flexible options and gain real-world skills, seeing your progress in real-time as you learn and grow.</p>
               <br/>
             </div>
             <div className="logo">
@@ -193,13 +191,11 @@ practical application.</p>
                 <p>Email: info@ezitech.com</p><br/>
             </div>
             <div className="links">
-                <h1>Explore More</h1><br/>
-                <a href="#">Home</a><br/>
-                <a href="#">About</a><br/>
-                <a href="#">Internships</a><br/>
-                <a href="#">Courses</a><br/>
-                <a href="#">Careers</a><br/>
-                <a href="#">Contact</a><br/>
+                <h1>Quick Links</h1><br/>
+                <Link to='/Home'><a href="#">Home</a><br/></Link>
+                <Link to='/About'><a href="#">About</a><br/></Link>
+                <Link to='/Internships'><a href="#">Internships</a><br/></Link>
+                <Link to='/Careers'><a href="#">Careers</a><br/></Link>
             </div>
             <div className="internship">
                 <h1>Internship</h1><br/>

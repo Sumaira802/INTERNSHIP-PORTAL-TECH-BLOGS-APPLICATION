@@ -6,6 +6,7 @@ import TwitterIcon from './assets/Twitter.png'
 import LinkedInIcon from './assets/Linkeldn.png'
 import WhatsappIcon from './assets/Whatspp.png'
 import heroImg from './assets/hero.png'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function Careers() {
@@ -21,13 +22,11 @@ function Careers() {
         <div className="midFooter">
             
             <div className="links">
-                <h1>Explore More</h1><br/>
-                <a href="#">Home</a><br/>
-                <a href="#">About</a><br/>
-                <a href="#">Internships</a><br/>
-                <a href="#">Courses</a><br/>
-                <a href="#">Careers</a><br/>
-                <a href="#">Contact</a><br/>
+                <h1>Quick Links</h1><br/>
+                <Link to='/Home'><a href="#">Home</a><br/></Link>
+                <Link to='/About'><a href="#">About</a><br/></Link>
+                <Link to='/Internships'><a href="#">Internships</a><br/></Link>
+                <Link to='/Careers'><a href="#">Careers</a><br/></Link>
             </div>
             <div className="internship">
                 <h1>Internship</h1><br/>

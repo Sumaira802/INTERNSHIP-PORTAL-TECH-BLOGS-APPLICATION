@@ -6,6 +6,7 @@ import TwitterIcon from './assets/Twitter.png'
 import LinkedInIcon from './assets/Linkeldn.png'
 import WhatsappIcon from './assets/Whatspp.png'
 import heroImg from './assets/hero.png'
+import { Link } from 'react-router-dom'
 import './App.css'
 import './About.css'
 
@@ -21,7 +22,7 @@ function App() {
             </div>
             <div className="about">
                 <div className="text">
-                    <p>Our mission is to empower students with practical skills that enable them to work while studying. We believe every student should have the opportunity to meet their financial needs for higher education, whether through home-based work or other part-time opportunities.</p>
+                    <p style={{color:'white'}}>Our mission is to empower students with practical skills that enable them to work while studying. We believe every student should have the opportunity to meet their financial needs for higher education, whether through home-based work or other part-time opportunities.</p>
                 </div>
             </div>
             <div className="people">
@@ -53,7 +54,7 @@ function App() {
     needed to excel. At Ezitech, our commitment is to
     support you at every step, helping you turn your goals
     into tangible achievements in the tech world.</p><br/>
-                <a href="#">Start your Internships</a>
+                <Link to='/InternForm'><a href="#">Start your Internships</a></Link>
                 </div>
                 <div className="image">
                     <div className="card">
@@ -84,23 +85,21 @@ function App() {
             <div className="started">
                 <h1>Ready to Get Started?</h1>
                 <p>Join us today and take the first step towards a successful career in technology.</p><br/>
-                <button>Get Started Now</button>
+                <Link to='/Internship'><button>Get Started Now</button></Link>
             </div>
             <div className="midFooter">
                 <div className="location">
-                <h1>Company</h1><br/>
-                <p>123 Main Street</p><br/>
-                <p>City, State, ZIP</p><br/>
-                <p>Email: info@ezitech.com</p><br/>
+                    <h1>Company</h1><br/>
+                    <p>123 Main Street</p><br/>
+                    <p>City, State, ZIP</p><br/>
+                    <p>Email: info@company.com</p><br/>
                 </div>
                 <div className="links">
-                <h1>Explore More</h1><br/>
-                <a href="#">Home</a><br/>
-                <a href="#">About</a><br/>
-                <a href="#">Internships</a><br/>
-                <a href="#">Courses</a><br/>
-                <a href="#">Careers</a><br/>
-                <a href="#">Contact</a><br/>
+                    <h1>Quick Links</h1><br/>
+                    <Link to='/Home'><a href="#">Home</a><br/></Link>
+                    <Link to='/About'><a href="#">About</a><br/></Link>
+                    <Link to='/Internships'><a href="#">Internships</a><br/></Link>
+                    <Link to='/Careers'><a href="#">Careers</a><br/></Link>
                 </div>
                 <div className="internship">
                 <h1>Internship</h1><br/>

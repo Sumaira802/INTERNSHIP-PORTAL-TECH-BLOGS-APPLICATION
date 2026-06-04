@@ -49,20 +49,30 @@ app.post('/api/login', async (req, res) => {
 });
 
 // 3. Internship Apply Route (with File Upload)
-app.post('/api/apply', upload.single('profileImage'), async (req, res) => {
+app.post('/api/login', async (req, res) => {
     try {
-        const newIntern = new Intern({ 
-            ...req.body, 
-            profileImage: req.file ? req.file.path : '' 
-        });
-        await newIntern.save();
-        res.status(200).json({ message: "Application Saved Successfully" });
-    } catch (err) { res.status(500).json({ error: err.message }); }
+        const { email, password } = req.body;
+        const user = await User.findOne({ email, password });
+        
+        if (user) {
+            res.status(200).json({ 
+                message: "Success", 
+                fullName: `${user.firstName} ${user.lastName}` 
+            });
+        } else {
+            res.status(401).json({ message: "Invalid Credentials" });
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
-// 4. GET Routes (Browser mein data dekhne ke liye)
-// Ab browser mein localhost:5000/api/signup likhne par error nahi aayega
 app.get('/api/signup', async (req, res) => {
+    const users = await User.find();
+    res.json(users);
+});
+
+app.get('/api/login', async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
