@@ -102,20 +102,20 @@ function App() {
                     <Link to='/Careers'><a href="#">Careers</a><br/></Link>
                 </div>
                 <div className="internship">
-                <h1>Internship</h1><br/>
-                <a href='#'>E-Commerce</a><br/>
-                <a href='#'>Web Development</a><br/>
-                <a href='#'>Data Science</a><br/>
-                <a href='#'>Cybersecurity</a><br/>
-                <a href='#'>Cloud Computing</a><br/>
-                <a href='#'>Artificial Intelligence</a><br/>
-                <a href='#'>Machine Learning</a><br/>
+                    <h1>Internship</h1><br/>
+                    <a href='#'>E-Commerce</a><br/>
+                    <a href='#'>Web Development</a><br/>
+                    <a href='#'>Data Science</a><br/>
+                    <a href='#'>Cybersecurity</a><br/>
+                    <a href='#'>Cloud Computing</a><br/>
+                    <a href='#'>Artificial Intelligence</a><br/>
+                    <a href='#'>Machine Learning</a><br/>
                 </div>
                 <div className="updates">
-                <h1>Updates</h1><br/>
-                <p>Stay updated with the latest news and announcements.</p><br/>
-                <input placeholder="Enter your email" />
-                <button>Subscribe</button>
+                    <h1>Updates</h1><br/>
+                    <p>Stay updated with the latest news and announcements.</p><br/>
+                    <input placeholder="Enter your email" />
+                    <button>Subscribe</button>
                 </div>
             </div>
     </header>
